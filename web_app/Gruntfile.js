@@ -51,6 +51,10 @@ module.exports = function (grunt) {
       gruntfile: {
         files: ['Gruntfile.js']
       },
+      html:{
+        files: ['<%= yeoman.app %>/scripts/{components,sections}/{,*/}*.html'],
+        tasks: ['ngtemplates']
+      },
       livereload: {
         options: {
           livereload: '<%= connect.options.livereload %>'
@@ -332,6 +336,14 @@ module.exports = function (grunt) {
       }
     },
 
+    // angular templates task
+    ngtemplates:  {
+      gu: {
+        src: ['app/scripts/components/{,*/}*.html', 'app/scripts/sections/{,*/}*.html', 'app/views/partials/*.html', 'app/scripts/util/templates/*.html'],
+        dest: 'app/scripts/generated_templates.js'
+      }
+    },
+
     // Copies remaining files to places other tasks can use
     copy: {
       dist: {
@@ -404,6 +416,7 @@ module.exports = function (grunt) {
       'concurrent:server',
       'autoprefixer',
       'connect:livereload',
+      'ngtemplates',
       'watch'
     ]);
   });
@@ -435,7 +448,8 @@ module.exports = function (grunt) {
     'uglify',
     'filerev',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'ngtemplates'
   ]);
 
   grunt.registerTask('default', [
@@ -443,4 +457,7 @@ module.exports = function (grunt) {
     'test',
     'build'
   ]);
+
+  grunt.loadNpmTasks('grunt-angular-templates');
+  grunt.loadNpmTasks('grunt-connect-proxy');
 };
