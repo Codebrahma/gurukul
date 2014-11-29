@@ -39,7 +39,7 @@ group :test do
   gem 'database_cleaner'
 
   # rspec easy matchers
-  gem 'shoulda-matchers', '1.5.6'
+  gem 'shoulda-matchers', '2.7.0'
 
   # Mock http interactions
   gem 'webmock'
