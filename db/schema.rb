@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141129111136) do
+ActiveRecord::Schema.define(version: 20141129142731) do
+
+  create_table "course_tests", force: true do |t|
+    t.integer  "course_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "course_tests", ["course_id"], name: "index_course_tests_on_course_id", using: :btree
 
   create_table "courses", force: true do |t|
     t.string   "name"
@@ -23,21 +31,13 @@ ActiveRecord::Schema.define(version: 20141129111136) do
   create_table "test_reports", force: true do |t|
     t.string   "status"
     t.integer  "user_course_id"
-    t.integer  "test_id"
+    t.integer  "course_test_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "test_reports", ["test_id"], name: "index_test_reports_on_test_id", using: :btree
+  add_index "test_reports", ["course_test_id"], name: "index_test_reports_on_course_test_id", using: :btree
   add_index "test_reports", ["user_course_id"], name: "index_test_reports_on_user_course_id", using: :btree
-
-  create_table "tests", force: true do |t|
-    t.integer  "course_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "tests", ["course_id"], name: "index_tests_on_course_id", using: :btree
 
   create_table "user_courses", force: true do |t|
     t.integer  "user_id"
