@@ -1,0 +1,17 @@
+# Change your settings, with your own credentials
+
+development:
+  adapter: mysql2
+  database: gurukul.development
+  pool: 5
+  timeout: 5000
+  username: root
+  password: 
+
+test:
+  adapter: mysql2
+  database: gurukul.test
+  pool: 5
+  timeout: 5000
+  username: root
+  password: 
