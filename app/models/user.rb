@@ -7,6 +7,6 @@ class User < ActiveRecord::Base
 	has_many :test_reports, :through => :user_courses
 
 	# Validations
-	validate :name, :presence => true
+	validates_presence_of :name
 	
 end

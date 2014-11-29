@@ -1,5 +1,6 @@
 require 'spec_helper'
 
 describe TestReport do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { should belong_to(:course_test) }
+  it { should belong_to(:user_course) }
 end
