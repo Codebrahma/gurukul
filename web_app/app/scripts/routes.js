@@ -48,9 +48,8 @@ function($routeProvider){
 }])
 
 .run(["$rootScope", "gu.data.User", "$location", function($rootScope, User, $location){
-  $rootScope.$on('$routeChangeStart', function(event){
+  $rootScope.$on('$routeChangeStart', function(){
     if(!User.isLoggedIn()){
-      event.preventDefault();
       $location.path('/login');
     } else {
       if($location.path() == "/login"){
