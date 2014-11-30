@@ -5,7 +5,7 @@
       var self = this;
 
       function init(){
-
+        self.messages = gu.messages;
       };
 
       init();

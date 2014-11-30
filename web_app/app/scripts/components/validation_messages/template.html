@@ -1,0 +1,9 @@
+<span data-ng-show="formElement.$dirty">
+  <span data-ng-messages="formElement.$error" class="text-danger">
+
+    <span data-ng-repeat="validationType in validationTypes"
+          data-ng-message="{{ validationType }}">
+      <span data-ng-bind="messages[validationType]"></span>
+    </span>
+  </span>
+</span>
