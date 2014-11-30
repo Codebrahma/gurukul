@@ -15,7 +15,9 @@
 /log/*.log
 /tmp
 
+config/database.yml
+
 /public
 /web_app/node_modules/
 /web_app/bower_components/
-config/database.yml
+/web_app/app/scripts/generated_templates.js
