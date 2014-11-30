@@ -1,1 +1,4 @@
-angular.module("gu.components", [ ]);
+angular.module("gu.components", [
+  "gu.components.navigation",
+  "gu.components.footer",
+]);

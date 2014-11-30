@@ -1,6 +1,30 @@
 angular.module('gu').run(['$templateCache', function($templateCache) {
   'use strict';
 
+  $templateCache.put('app/scripts/components/footer/template.html',
+    "<div class=\"container\">\n" +
+    "  <div class=\"footer\">\n" +
+    "    <p><span class=\"glyphicon glyphicon-heart\"></span> from the <a href=\"http://codebrahma.com\">Codebrahma</a> team.</p>\n" +
+    "  </div>\n" +
+    "</div>\n"
+  );
+
+
+  $templateCache.put('app/scripts/components/navigation/template.html',
+    "<div class=\"container\">\n" +
+    "  <div class=\"header\">\n" +
+    "    <h3 class=\"text-muted\">Gurukul</h3>\n" +
+    "\n" +
+    "    <ul class=\"nav nav-pills pull-right\">\n" +
+    "      <li data-ng-if=\"masterCtrl.currentSession\">\n" +
+    "        <a data-ng-click=\"logout()\">Logout</a>\n" +
+    "      </li>\n" +
+    "    </ul>\n" +
+    "  </div>\n" +
+    "</div>\n"
+  );
+
+
   $templateCache.put('app/scripts/sections/home/index.html',
     "<h1>Welcome</h1>\n"
   );

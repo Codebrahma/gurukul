@@ -20,25 +20,14 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a ng-href="#">Home</a></li>
-          <li><a ng-href="#/about">About</a></li>
-          <li><a ng-href="#">Contact</a></li>
-        </ul>
-        <h3 class="text-muted">Gurukul</h3>
-      </div>
-    </div>
-
     <div data-ng-controller="gu.MasterController as masterCtrl">
-      <div data-ng-view></div>
-    </div>
+      <div gu-navigation></div>
 
-    <div class="container">
-      <div class="footer">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Codebrahma team.</p>
+      <div class="container">
+        <div data-ng-view></div>
       </div>
+
+      <div gu-footer></div>
     </div>
 
 
@@ -110,6 +99,13 @@
         <script src="scripts/data/user.js"></script>
 
         <!-- Load the components -->
+        <script src="scripts/components/footer/module.js"></script>
+        <script src="scripts/components/footer/directive.js"></script>
+
+        <script src="scripts/components/navigation/module.js"></script>
+        <script src="scripts/components/navigation/directive.js"></script>
+        <script src="scripts/components/navigation/controller.js"></script>
+
         <script src="scripts/components/module.js"></script>
 
         <!-- Load sections -->

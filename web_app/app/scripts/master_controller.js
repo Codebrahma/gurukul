@@ -1,14 +1,14 @@
 (function(){
   angular.module("gu")
-  .controller("gu.MasterController",
-  ["$scope",
-  function($scope){
-    var self = this;
+  .controller("gu.MasterController",[ "$scope",
+    function($scope){
+      var self = this;
 
-    function init(){
+      function init(){
 
-    };
+      };
 
-    init();
-  }]);
+      init();
+    }
+  ]);
 }());
