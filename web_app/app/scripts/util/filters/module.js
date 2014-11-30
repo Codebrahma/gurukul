@@ -1,1 +1,1 @@
-angular.module("gu.util.filters", [ ]);
+angular.module("gu.util.filters",[ ]);

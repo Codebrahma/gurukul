@@ -1,1 +1,1 @@
-angular.module("gu.util.controllers", [ ]);
+angular.module("gu.util.controllers",[  ]);

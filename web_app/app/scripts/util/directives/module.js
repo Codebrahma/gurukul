@@ -1,1 +1,1 @@
-angular.module("gu.util.directives", [ ]);
+angular.module("gu.util.directives",[ "gu.util.services" ]);

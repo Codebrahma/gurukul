@@ -1,1 +1,1 @@
-angular.module("gu.util.services", [ ]);
+angular.module("gu.util.services",[ "gu.data" ]);

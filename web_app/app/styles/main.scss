@@ -90,3 +90,22 @@ body {
     border-bottom: 0;
   }
 }
+
+#gu-notification{
+  text-align: center;
+  width: 100%;
+  top: 80px;
+  z-index: 10001;
+  position: fixed;
+  height: 0px;
+  .gu-global-loader{
+    position: relative;
+    padding: 10px;
+    background: rgba(0,0,0,0.8);
+    color: white;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 100px;
+  }
+}
