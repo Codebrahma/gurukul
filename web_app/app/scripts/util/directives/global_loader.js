@@ -11,7 +11,7 @@ angular.module("gu.util.directives")
         var delay = $scope.delay || 200,
             loaderConfig = {
               message: "Working, Please wait..."
-            }
+            };
         function init(){
           $scope.queue = StateHandler.queue;
         };

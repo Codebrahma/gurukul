@@ -5,7 +5,7 @@
 
     function($resource, $q, localStorageService, $window){
 
-      var User = $resource(gu.apiFor("users/:user_id/"),
+      var User = $resource(gu.apiFor("users/:id/"),
         { id: "@id" }, {
           signIn: { method: "POST", url: '/users/sign_in' },
           signOut: { method: "DELETE", url: '/users/sign_out' }
