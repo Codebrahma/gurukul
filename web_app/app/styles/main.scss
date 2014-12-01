@@ -3,6 +3,30 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+$gu-success: #8cc63f;
+$gu-success-lighter: #c3da72;
+
+$gu-info: #0098dd;
+$gu-info-lighter: #b2ddff;
+
+$gu-warning: #f5bd54;
+$gu-warning-lighter: #fad297;
+
+$gu-danger: #ff6633;
+$gu-danger-lighter: #ff9966;
+
+$gu-error: #ff0000;
+
+$gu-navy-blue: #1C315A;
+
+$gu-orange: #ff8001;
+$gu-purple: #9933ff;
+$gu-lime-green: #80ff00;
+$gu-skyblue: #3399ff;
+$gu-red: #ff0000;
+$gu-yellow: #ffff00;
+
+
 .browsehappy {
   margin: 0.2em 0;
   background: #ccc;
@@ -51,7 +75,7 @@ body {
 #gu-notification{
   text-align: center;
   width: 100%;
-  top: 80px;
+  top: 40px;
   z-index: 10001;
   position: fixed;
   height: 0px;
@@ -64,5 +88,64 @@ body {
     margin-left: auto;
     margin-right: auto;
     min-width: 100px;
+  }
+  .gu-alert{
+    width: 650px;
+    font-size: 14px;
+    display: inline-block;
+    color: white;
+    padding: 10px;
+    border-radius: 3px;
+    position: relative;
+    text-align: left;
+    .close{
+      float: right;
+    }
+    .glyphicon{
+      font-size: 30px;
+      float: left;
+      margin-right: 15px;
+    }
+    .body{
+      position: relative;
+      top: 3px;
+      position: relative;
+    }
+  }
+  .gu-danger{
+    background-color: $gu-danger-lighter;
+    .gu-alert-icon{
+      background-color: $gu-danger;
+    }
+  }
+  .gu-success{
+    background-color: $gu-success-lighter;
+    .gu-alert-icon{
+      background-color: $gu-success;
+    }
+  }
+  .gu-info{
+    background-color: $gu-info-lighter;
+    .gu-alert-icon{
+      background-color: $gu-info;
+    }
+  }
+  .gu-warning{
+    background-color: $gu-warning-lighter;
+    .gu-alert-icon{
+      background-color: $gu-warning;
+    }
+  }
+  .gu-danger-icon{
+    @extend .glyphicon-remove-sign;
+  }
+  .gu-success-icon{
+    @extend .glyphicon-ok-sign;
+  }
+  .gu-info-icon{
+    @extend .glyphicon-info-sign;
+  }
+  .gu-warning-icon{
+    @extend .glyphicon-question-sign;
   }
 }
