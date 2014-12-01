@@ -22,6 +22,9 @@ gem "figaro"
 
 gem "parallel"
 
+# User Authentication
+gem 'devise'
+
 group :development, :test do
   # Debug gem
   gem 'pry', '0.9.12'
