@@ -5,12 +5,12 @@
 puts "Seeding User Course Status"
 
 user_course_statuses = [
-  "Preparing",
-  "ReadyForTest",
-  "TestInProgress",
-  "Evaluation",
-  "Completed",
-  "Failed"
+  "preparing",
+  "ready_for_test",
+  "test_in_progress",
+  "evaluating",
+  "completed",
+  "failed"
 ]
 
 user_course_statuses.each do | user_course_status |
