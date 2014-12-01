@@ -1,7 +1,29 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+
+puts "Seeding User Course Status"
+
+user_course_statuses = [
+  "Preparing",
+  "ReadyForTest",
+  "TestInProgress",
+  "Evaluation",
+  "Completed",
+  "Failed"
+]
+
+user_course_statuses.each do | user_course_status |
+  UserCourseStatus.create( :status => user_course_status )
+end
+
+puts "Seeding Test Report Status"
+
+test_report_statuses = [
+  "passed",
+  "failed"
+]
+
+test_report_statuses.each do | test_report_status |
+  TestReportStatus.create( :status => test_report_status )
+end
