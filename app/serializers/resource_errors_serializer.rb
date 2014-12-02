@@ -1,6 +1,6 @@
 class ResourceErrorsSerializer < BaseSerializer
   def code
-    400
+    object.errors.empty? ? 200 : 400
   end
 
   def message
