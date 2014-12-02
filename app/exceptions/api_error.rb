@@ -12,7 +12,6 @@ class ApiError < StandardError
     }
   end
 
-  private
   def self.codes
     {
       :INVALID_OBJECT                            => 400,

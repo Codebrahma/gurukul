@@ -8,7 +8,7 @@ class ApiErrorSerializer < BaseSerializer
     error_hash[:message]
   end
 
-  private
+private
   def error_hash
     object.error_hash
   end
