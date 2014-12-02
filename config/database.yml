@@ -6,7 +6,7 @@ development:
   pool: 5
   timeout: 5000
   username: root
-  password:
+  password: root
 
 test:
   adapter: mysql2
@@ -14,4 +14,4 @@ test:
   pool: 5
   timeout: 5000
   username: root
-  password:
+  password: root

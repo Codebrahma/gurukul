@@ -17,6 +17,8 @@ gem "active_model_serializers"
 # Elegant code
 gem "monadic"
 
+gem 'devise'
+
 # Easy configuration
 gem "figaro"
 
@@ -25,6 +27,9 @@ gem "parallel"
 group :development, :test do
   # Debug gem
   gem 'pry', '0.9.12'
+
+  gem "faker"
+  gem "spring-commands-rspec"
 
   # Testing stuff
   gem 'rspec-rails', '2.13.0'
