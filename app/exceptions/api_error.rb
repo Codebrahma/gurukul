@@ -28,7 +28,7 @@ class ApiError < StandardError
       400  => "Invalid object",
       500  => "Internal server error",
       5001 => "No active user session",
-      5002 => "Username and password don't match",
+      5002 => "Username and password doesn't match",
       9001 => "Request unauthorized, Can't access this resource"
     }
   end

@@ -33,7 +33,7 @@ describe ApiError do
       it "should return the appropriate error message" do
         expect(ApiError.new(5002).send(:error_hash)).to eq({
           :code => 5002,
-          :message => "Username and password don't match"
+          :message => "Username and password doesn't match"
         })
       end
     end
