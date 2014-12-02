@@ -1,25 +1,40 @@
 (function(){
   var app = angular.module("gu.components.courseList");
   app.controller("gu.components.courseList.Controller",
-    [ "$scope", "gu.data.Course", "gu.util.services.StateHandler",
-    function($scope, Course, StateHandler){
+    [ "$scope", "gu.data.Course", "gu.util.services.StateHandler", "gu.data.UserCourse",
+    function($scope, Course, StateHandler, UserCourse){
       function init(){
-        $scope.state = StateHandler.getInstance();
+        $scope.courseListState = StateHandler.getInstance();
+        $scope.startCourseState = StateHandler.getInstance();
+        $scope.startCourse = startCourse;
         loadCourses();
       };
 
       function loadCourses(){
-        $scope.state.initiate();
+        function loadSuccess(){
+          $scope.courseListState.success();
+        };
+
+        function loadFailure(){
+        $scope.courseListState.fatal("Failed to fetch courses");
+        };
+
+        $scope.courseListState.initiate();
         $scope.courses = Course.query();
         $scope.courses.$promise(loadSuccess, loadFailure);
       };
 
-      function loadSuccess(){
-        $scope.state.success();
-      };
+      function startCourse(course){
+        function loadSuccess(){
+          $scope.startCourseState.success();
+        };
 
-      function loadFailure(){
-        $scope.state.fatal();
+        function loadFailure(){
+          $scope.startCourseState.fatal("Failed to star course "+ course.name);
+        };
+
+        $scope.startCourseState.initiate();
+        new UserCourse({ course_id: course.id }).$save(loadSuccess, loadFailure);
       };
 
       init();
