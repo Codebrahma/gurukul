@@ -9,7 +9,7 @@ function($routeProvider){
 
   // This resolution is for the logged in user, ensures that the views are
   // rendered only if the user is logged in.
-  var currentUser = {
+  var resolutions = {
     currentUser: ["gu.data.User", "$q", function(User, $q){
       // every time you open a new route let's make sure the current user
       // will be available even if the page is refreshed
@@ -21,6 +21,9 @@ function($routeProvider){
       // resolve the promise
       defer.resolve();
       return defer.promise;
+    }],
+    courses: ["gu.data.Course", "gu.data.User", "$route", function(Course, User, $route){
+      return Course.get({ id: $route.current.params.courseId });
     }]
   };
 
@@ -36,9 +39,19 @@ function($routeProvider){
   })
 
   // Home index page
-  .when('/home', {
-    templateUrl: 'app/scripts/sections/home/index.html',
-    resolve: currentUser
+  .when('/courses', {
+    templateUrl: 'app/scripts/sections/courses/index.html',
+    resolve: {
+      currentUser: resolutions.currentUser
+    }
+  })
+
+  .when('/courses/:courseId', {
+    templateUrl: 'app/scripts/sections/courses/show.html',
+    resolve: {
+      currentUser: resolutions.currentUser,
+      courses: resolutions.course
+    }
   })
 
   // Default Route
@@ -53,7 +66,7 @@ function($routeProvider){
       $location.path('/login');
     } else {
       if($location.path() == "/login"){
-        $location.path("/home");
+        $location.path("/courses");
       };
     };
   });
