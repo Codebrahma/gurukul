@@ -21,7 +21,7 @@ angular.module("gu.sections.session")
     };
 
     function loginFailure(){
-      $scope.state.fatal("Unable to login user.");
+      $scope.state.fatal("Unable to login user");
     };
 
     function redirect(){

@@ -21,7 +21,7 @@
 
         $scope.courseListState.initiate();
         $scope.courses = Course.query();
-        $scope.courses.$promise(loadSuccess, loadFailure);
+        $scope.courses.$promise.then(loadSuccess, loadFailure);
       };
 
       function startCourse(course){
@@ -30,7 +30,7 @@
         };
 
         function loadFailure(){
-          $scope.startCourseState.fatal("Failed to star course "+ course.name);
+          $scope.startCourseState.fatal("Failed to start course "+ course.name);
         };
 
         $scope.startCourseState.initiate();
