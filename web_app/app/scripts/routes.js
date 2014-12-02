@@ -35,6 +35,11 @@ function($routeProvider){
     controller: 'gu.sections.session.LoginController'
   })
 
+  .when('/register', {
+    templateUrl: 'app/scripts/sections/session/register.html',
+    controller: 'gu.sections.session.RegisterController'
+  })
+
   // Home index page
   .when('/home', {
     templateUrl: 'app/scripts/sections/home/index.html',
@@ -49,12 +54,17 @@ function($routeProvider){
 
 .run(["$rootScope", "gu.data.User", "$location", function($rootScope, User, $location){
   $rootScope.$on('$routeChangeStart', function(){
-    if(!User.isLoggedIn()){
-      $location.path('/login');
-    } else {
-      if($location.path() == "/login"){
+    function isPublicRoute($location){
+      return ["/login", "/register"].indexOf($location.path()) != -1;
+    }
+    if(User.isLoggedIn()){
+      if(isPublicRoute($location)){
         $location.path("/home");
       };
+    }else{
+      if(!isPublicRoute($location)){
+        $location.path("/login");
+      }
     };
   });
 }]);
