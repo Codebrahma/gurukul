@@ -4,7 +4,7 @@ module ApiExceptionHandler
   include ActiveSupport::Rescuable
 
   included do
-    #rescue_from StandardError                , :with => :error_render_method if !Rails.env.development?
+    rescue_from StandardError                , :with => :error_render_method if !Rails.env.development?
     rescue_from ApiError                     , :with => :api_error_handler
     rescue_from ActiveRecord::RecordNotFound , :with => :authorization_error_handler
     rescue_from CanCan::AccessDenied         , :with => :authorization_error_handler
