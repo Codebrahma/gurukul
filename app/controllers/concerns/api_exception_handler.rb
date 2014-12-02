@@ -13,7 +13,7 @@ module ApiExceptionHandler
   private
 
   def api_error_handler(exception)
-    render :json => exception, :serializer => ApiErrorSerializer
+    render :json => ApiErrorSerializer.new(exception)
   end
 
   def authorization_error_handler(exception)
