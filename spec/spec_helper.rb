@@ -24,7 +24,7 @@ RSpec.configure do |config|
 
   config.before(:suite) do
     DatabaseCleaner.strategy = :transaction
-    DatabaseCleaner.clean_with(:truncation, :except => %w())
+    DatabaseCleaner.clean_with(:truncation, :except => %w(test_report_statuses user_course_statuses))
   end
 
   config.around(:each) do |example|
