@@ -21,3 +21,5 @@ config/database.yml
 /web_app/node_modules/
 /web_app/bower_components/
 /web_app/app/scripts/generated_templates.js
+
+.rspec
