@@ -4,7 +4,6 @@ class ApiError < StandardError
     @error_code = error_code
     @message_params = ApiError.messages[@error_code]
   end
-private
 
   def error_hash
     {
@@ -13,6 +12,7 @@ private
     }
   end
 
+  private
   def self.codes
     {
       :INVALID_OBJECT                            => 400,
