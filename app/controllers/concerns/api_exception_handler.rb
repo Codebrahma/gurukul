@@ -17,7 +17,7 @@ module ApiExceptionHandler
   end
 
   def authorization_error_handler(exception)
-    api_error_handler(ApiError.new(9001))
+    api_error_handler(ApiError.new(ApiError.codes[:UNAUTHORIZED]))
   end
 
   def error_render_method(exception)
@@ -25,6 +25,6 @@ module ApiExceptionHandler
       STDERR.puts "Exception: #{exception.message}"
       STDERR.puts "Backtrace: #{exception.backtrace.join('\n')}"
     end
-    api_error_handler(ApiError.new(500))
+    api_error_handler(ApiError.new(ApiError.codes[:UNKNOWN]))
   end
 end

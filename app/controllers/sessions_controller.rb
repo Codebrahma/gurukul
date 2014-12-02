@@ -15,6 +15,6 @@ class SessionsController < Devise::SessionsController
   private
   def load_and_authorize_resource
     self.resource = warden.authenticate(auth_options)
-    raise ApiError.new(5002) if resource.nil?
+    raise ApiError.new(ApiError.codes[:INVALID_LOGIN_CREDENTIALS]) if resource.nil?
   end
 end
