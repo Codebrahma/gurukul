@@ -15,6 +15,6 @@ private
   end
 
   def authenticate_user!
-    user_signed_in? ? super : raise ApiError.new(ApiError.codes[:NO_ACTIVE_USER_SESSION])
+    user_signed_in? ? super : ( raise ApiError.new(ApiError.codes[:NO_ACTIVE_USER_SESSION]) )
   end
 end

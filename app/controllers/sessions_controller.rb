@@ -1,5 +1,5 @@
 class SessionsController < Devise::SessionsController
-  skip_before_filter :require_no_authentication, :only => :create
+  skip_before_filter :authenticate_user!, :only => :create
   skip_before_filter :verify_signed_out_user, :only => :destroy
 
   before_filter :load_and_authorize_resource, :only => :create
@@ -15,7 +15,7 @@ class SessionsController < Devise::SessionsController
     serializer_responder ApiSuccessSerializer, true
   end
 
-private
+  private
   def load_and_authorize_resource
     self.resource = warden.authenticate(auth_options)
     raise ApiError.new(ApiError.codes[:INVALID_LOGIN_CREDENTIALS]) if resource.nil?
