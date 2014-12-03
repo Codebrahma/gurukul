@@ -24,7 +24,9 @@ gem "parallel"
 
 # User Authentication
 gem 'devise'
-gem 'cancan'
+
+# Cancan for user Authorisation
+gem "cancan"
 
 group :development, :test do
   # Debug gem
